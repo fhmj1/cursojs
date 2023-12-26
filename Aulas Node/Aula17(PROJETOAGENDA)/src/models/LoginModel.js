@@ -26,7 +26,7 @@ class Login {
     this.valida(); // Chama o método de validação
     if (this.errors.length > 0) return; // Se houver erros, encerra a operação
 
-    await this.userExists(); // Verifica se o usuário já existe
+    await this.usuarioExiste(); // Verifica se o usuário já existe
 
     if (this.errors.length > 0) return; // Se houver erros, encerra a operação
 
@@ -87,7 +87,7 @@ class Login {
   }
 
   // Método para verificar se o usuário já existe no banco de dados
-  async userExists() {
+  async usuarioExiste() {
     try {
       const user = await LoginModel.findOne({ email: this.body.email });
       if (user) this.errors.push("Conta já existe.");
