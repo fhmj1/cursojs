@@ -3,3 +3,8 @@
 <% - Imprime sem escapar caracteres %> ----- executa
 <%# comentario %>
 <%- include ('CAMINHO/ARQUIVO); %>
+
+
+
+
+teste
