@@ -24,7 +24,7 @@ exports.csrfMiddleware = (req, res, next) => {
 };
 
 // Middleware para verificar se o usuário está autenticado (logado)
-exports.loginRequired = (req, res, next) => {
+exports.requerLogin = (req, res, next) => {
   if (!req.session.user) {
     // Se o usuário não estiver autenticado, redireciona para a página inicial com uma mensagem de erro
     req.flash("errors", "Você precisa fazer login");

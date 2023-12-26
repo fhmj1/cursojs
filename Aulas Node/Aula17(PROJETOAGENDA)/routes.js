@@ -2,7 +2,7 @@
 const homeController = require("./src/controllers/homeController");
 const loginController = require("./src/controllers/loginController");
 const contatoController = require('./src/controllers/contatoController')
-const { loginRequired } = require('./src/middlewares/middleware');
+const { requerLogin } = require('./src/middlewares/middleware');
 
 // Importando o módulo Express
 const express = require("express");
@@ -20,11 +20,11 @@ route.post('/login/login', loginController.login)
 route.get('/login/logout', loginController.logout)
 
 // Rotas de contato
-route.get('/contato/index', loginRequired, contatoController.index)
-route.post('/contato/register', loginRequired, contatoController.register)
-route.get('/contato/index/:id', loginRequired, contatoController.editIndex)
-route.post('/contato/edit/:id', loginRequired, contatoController.update)
-route.get('/contato/delete/:id', loginRequired, contatoController.delete)
+route.get('/contato/index', requerLogin, contatoController.index)
+route.post('/contato/register', requerLogin, contatoController.register)
+route.get('/contato/index/:id', requerLogin, contatoController.editIndex)
+route.post('/contato/edit/:id', requerLogin, contatoController.update)
+route.get('/contato/delete/:id', requerLogin, contatoController.delete)
 
 // Exportando o módulo de rotas
 module.exports = route;
