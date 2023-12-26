@@ -1,0 +1,35 @@
+Express é um microFramework
+
+/*         CRIAR    LER   ATUALIZAR  DELETE
+    CRUD ->CREATE   READ   UPDATE    DELETE
+            POST    GET     PUT      DELETE
+
+
+
+POST será usado para criar alguma coisa
+GET será usado para entregar alguma coisa
+
+
+
+    http://meusite.com/ <- GET -> Entregue a pagina / 
+    http://meusite.com/sobre <- GET -> Entregue a pagina /sobre
+    http://meusite.com/contato <- GET -> Entregue a pagina /contato
+*/
+
+
+importar para dentro do projeto
+
+const express = require("express");
+const app = express();
+
+
+app.get("/", (req, res) => {
+  res.send("Olá eu sou a resposta do servidor para você usuário");
+});
+
+
+req = usuário requisita alguma informação ao servidor
+res = servidor entrega a resposta da requisição ao usuário
+
+
+

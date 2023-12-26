@@ -1,0 +1,21 @@
+Utilizar as linhas de comando para importar e inicializar as rotas usando o express
+
+Importa o modulo express
+
+const express = require("express");
+
+Inicializa as rotas usando o express
+
+const route = express.Router();
+
+
+Exemplo:
+
+Importa o modulo(arquivo local) homeController
+
+const homeController = require("./controllers/homeController");
+
+Essas são as rotas do modulo(arquivo local) homeController que serão tratadas pelo express
+
+route.get("/", homeController.paginaInicial);
+route.post("/", homeController.trataPost);

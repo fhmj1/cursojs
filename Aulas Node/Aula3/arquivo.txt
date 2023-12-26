@@ -1,0 +1,30 @@
+
+Dependencias de desenvolvimento (devDependencies)
+webpack, babel, nodemon
+
+Dependencias de projeto(dependencies)
+express
+
+
+
+Instalando uma dependencia (express):
+
+npm install express  -> ultima versão com possibilidade de atualizar ex: '^4.18.2'
+
+npm install express@2.1.0 -> versão especifica com possibilidade de atualizar ex: '^2.1.0'
+
+npm install express -E -> ultima versão sem possibilidade de atualizar ex: '4.18.2'
+
+npm install express@2.1.0 -E -> versão especifica sem possibilidade de atualizar ex: '2.1.0'
+
+npm install express --save-dev -> movendo dependencia para devDependencia:
+
+npm update -> atualiza a dependencia instalada para ultima versão:
+
+npm uninstall express -> desinstalando a dependencia:
+
+npm ls -> listando as dependencias, suas pastas e arquivos:
+
+npm ls --depth=0 -> lista as apenas as dependencias instaladas:
+
+npm outdated -> verificar quais dependencias estão desatualizadas:

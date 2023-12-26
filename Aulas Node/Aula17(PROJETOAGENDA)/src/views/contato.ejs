@@ -1,0 +1,58 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-lg-12 my-2">
+      <h1>Bem-vindo</h1>
+      <p class="lead">Faça o cadastro ou edite seus contatos abaixo</p>
+    </div>
+  </div>
+
+  <%- include('includes/messages') %>
+
+      <% if(contato._id) {%><form class="form-editar" action="/contato/edit/<%= contato._id%>" method="POST"><% } 
+        else { %><form class="form-registrar" action="/contato/register" method="POST"> <% } %>
+        <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+        <div class="form-group my-2">
+          <label class="form-group my-2">Nome:</label>
+          <input
+            value="<%= contato.nome %>"
+            type="text"
+            class="form-control"
+            name="nome"
+          />
+        </div>
+        <div class="form-group my-2">
+          <label class="form-group my-2">Sobrenome:</label>
+          <input
+          value="<%= contato.sobrenome %>"
+            type="text"
+            class="form-control"
+            name="sobrenome"
+          />
+        </div>
+        <div class="form-group my-2">
+            <label class="form-group my-2">Email:</label>
+            <input
+            value="<%= contato.email %>"
+              type="email"
+              class="form-control"
+              name="email"
+            />
+          </div>
+          <div class="form-group my-2">
+            <label class="form-group my-2">Telefone:</label>
+            <input
+            value="<%= contato.telefone %>"
+              type="tel"
+              class="form-control"
+              name="telefone"
+            />
+          </div>
+          <% if(!contato._id) {%><button type="submit" class="btn btn-primary">Cadastrar</button><% } 
+            else { %><button type="submit" class="btn btn-primary">Editar</button><% } %>
+      </form>
+    </div>
+
+ <%- include('includes/footer') %>

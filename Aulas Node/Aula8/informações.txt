@@ -1,0 +1,57 @@
+GET
+
+Parametros de URL
+
+REQ.PARAMS
+
+Definição: req.params é uma propriedade que contém parâmetros da URL. É usado quando você define partes variáveis na rota. 
+Por exemplo, em uma rota como /usuarios/:id, o valor do parâmetro id estará disponível em req.params.id.
+
+Utiliza req.params
+
+app.get("/testes/:idUsuarios?/:parametro?", (req, res) => {
+  console.log(req.params);
+  res.send(req.params.idUsuarios);
+});
+
+Exemplo de URL com parametro: http://localhost:3000/<idUsuarios>/<parametro>
+
+
+----------------------------------------------------------------------------------
+
+QUERYSTRING
+
+Utiliza req.query
+
+app.get("/testes/:idUsuarios?/:parametro?", (req, res) => {
+  console.log(req.query);
+  res.send(req.query.nome)
+});
+
+Exemplo de URL com QUERYSTRING: http://localhost:3000/?nome=fábio&idade=23
+
+
+
+----------------------------------------------------------------------------------
+
+POST
+
+Definição: req.body é uma propriedade usada para acessar os dados enviados no corpo da requisição HTTP. 
+É frequentemente usado em requisições POST, PUT e PATCH, onde os dados do cliente são enviados no corpo da requisição.
+
+Usar essas linhas de código para tratar o POST da requisição
+
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+
+Caso não utilize o corpo da requisição (req.body) será undefined
+
+app.post("/", (req, res) => {
+  console.log(req.body);
+  res.send(req.body);
+});
+
+
+----------------------------------------------------------------------------------
+

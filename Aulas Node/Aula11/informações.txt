@@ -1,0 +1,7 @@
+const app = express();
+const routes = require("./routes");
+const path = require("path");
+
+importando o local absoluto do modulo public
+
+app.use(express.static(path.resolve(__dirname, "public")));

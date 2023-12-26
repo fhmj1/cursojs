@@ -1,0 +1,14 @@
+Dependencias instaladas:
+
+dependencies:
+express
+
+devDependencies: 
+nodemon
+
+
+configurando o nodemon para npm start
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
